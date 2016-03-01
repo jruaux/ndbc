@@ -1,5 +1,5 @@
 # NDBC Modular Input
-Modular Input for National Data Buoy Center station observations
+Modular Input for [National Data Buoy Center](http://www.ndbc.noaa.gov/) observations
 
 ## Installation
 - Download this Modular Input (`ndbc.spl`)
@@ -13,7 +13,7 @@ Modular Input for National Data Buoy Center station observations
 
 The NDBC Modular Input fetches data from NOAA's NDBC stations. It uses data available from this URL: `http://www.ndbc.noaa.gov/get_observation_as_xml.php?station={station_id}`
 
-Example of data returned by a NDBC station:
+Example of data returned by NDBC station `46025`:
 ```xml
 <observation id="46025" name="Santa Monica Basin - 33NM WSW of Santa Monica, CA" lat="33.749" lon="-119.053">
   <datetime>2016-03-01T05:50:00UTC</datetime>
