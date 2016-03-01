@@ -10,9 +10,11 @@ def getepoch(dt_with_tz):
 
 def getmap(obs):
     obsmap = {}
+    if hasattr(obs, 'id'):
+        obsmap['station'] = obs.id
     if hasattr(obs, 'datetime'):
         obsmap['datetime'] = obs.datetime.isoformat()
-    names = ['station', 'url', 'name', 'lat', 'lon', 'units', 'meta']
+    names = ['url', 'name', 'lat', 'lon', 'units', 'meta']
     names.extend(buoyant.buoy.NAMES.values())
     for name in names:
         if (hasattr(obs, name)):
