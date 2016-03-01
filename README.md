@@ -36,4 +36,5 @@ The sourcetype is `ndbc` and each input has its own `source` which is the name o
 ## Developers
 
 To build the NDBC modular input from source, clone this repository and run this command from the top-level folder:
+
 ```python setup.py dist```
