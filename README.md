@@ -1,8 +1,8 @@
 # NDBC Modular Input
-Modular Input for [National Data Buoy Center](http://www.ndbc.noaa.gov/) observations
+Splunk add-on for [National Data Buoy Center](http://www.ndbc.noaa.gov/) observations
 
 ## Installation
-- Download this Modular Input (`ndbc.spl`)
+- Download the latest release of the add-on: [ndbc.spl](https://github.com/jruaux/ndbc/releases/download/1.0/ndbc.spl)
 - Install the Modular Input
 - Configure NDBC Data Inputs: `Settings > Data Inputs > NDBC`
   - Enable the zones that would you like to receive buoy data from
@@ -32,3 +32,8 @@ Example of data returned by NDBC station `46025`:
 ```
 
 The sourcetype is `ndbc` and each input has its own `source` which is the name of the input.
+
+## Developers
+
+To build the NDBC modular input from source, clone this repository and run this command from the top-level folder:
+```python setup.py dist```
