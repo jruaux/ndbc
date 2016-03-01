@@ -41,46 +41,28 @@ class DistCommand(Command):
             os.makedirs("build")
 
         with closing(tarfile.open(os.path.join("build", app + ".spl"), "w")) as spl:
+
             spl.add(
-                os.path.join("src", app + ".py"),
-                arcname=os.path.join(app, "bin", app + ".py")
+                "src",
+                arcname=os.path.join(app, "bin")
             )
 
             spl.add(
-                os.path.join("examples", app, "default", "app.conf"),
-                arcname=os.path.join(app, "default", "app.conf")
+                "default",
+                arcname=os.path.join(app, "default")
+            )
+
+            spl.add(
+                "README",
+                arcname=os.path.join(app, "README")
             )
             spl.add(
-                os.path.join("examples", app, "README", "inputs.conf.spec"),
-                arcname=os.path.join(app, "README", "inputs.conf.spec")
+                "static",
+                arcname=os.path.join(app, "static")
             )
-
-            splunklib_files = self.get_python_files(os.listdir(splunklib_arcname))
-            for file_name in splunklib_files:
-                spl.add(
-                    os.path.join(splunklib_arcname, file_name),
-                    arcname=os.path.join(app, "bin", splunklib_arcname, file_name)
-                )
-
-            modinput_files = self.get_python_files(os.listdir(modinput_dir))
-            for file_name in modinput_files:
-                spl.add(
-                    os.path.join(modinput_dir, file_name),
-                    arcname=os.path.join(app, "bin", modinput_dir, file_name)
-                )
 
             spl.close()
 
-        # Create searchcommands_app-<three-part-version-number>-private.tar.gz
-
-        setup_py = os.path.join('examples', 'searchcommands_app', 'setup.py')
-
-        check_call(('python', setup_py, 'build', '--force'), stderr=STDOUT, stdout=sys.stdout)
-        tarball = 'searchcommands_app-{0}-private.tar.gz'.format(self.distribution.metadata.version)
-        source = os.path.join('examples', 'searchcommands_app', 'build', tarball)
-        target = os.path.join('build', tarball)
-
-        shutil.copyfile(source, target)
         return
 
 setup(
@@ -91,7 +73,7 @@ setup(
     license="http://www.apache.org/licenses/LICENSE-2.0",
     name="ta-ndbc",
     packages=["ndbc"],
-    url="http://github.com/jruaux/TA-NDBC",
+    url="http://github.com/jruaux/ndbc",
     version=1.0,
     classifiers=[
         "Programming Language :: Python",
