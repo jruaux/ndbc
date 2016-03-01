@@ -32,3 +32,8 @@ Example of data returned by NDBC station `46025`:
 ```
 
 The sourcetype is `ndbc` and each input has its own `source` which is the name of the input.
+
+## Developers
+
+To build the NDBC modular input from source, clone this repository and run this command from the top-level folder:
+```python setup.py dist```
