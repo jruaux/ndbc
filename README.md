@@ -2,7 +2,7 @@
 Splunk add-on for [National Data Buoy Center](http://www.ndbc.noaa.gov/) observations
 
 ## Installation
-- Download the latest release of the add-on: [ndbc.spl](https://github.com/jruaux/ndbc/releases/tag/1.0)
+- Download the latest release of the add-on: [ndbc.spl](https://github.com/jruaux/ndbc/releases/download/1.0/ndbc.spl)
 - Install the Modular Input
 - Configure NDBC Data Inputs: `Settings > Data Inputs > NDBC`
   - Enable the zones that would you like to receive buoy data from
