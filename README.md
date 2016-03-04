@@ -36,41 +36,7 @@ Example of data returned by NDBC station `46025`:
 
 Example of data produced by the NDBC add-on:
 ```json
-{
-    air_temp:  60.4 
-    average_period:  9.5 
-    datetime:  2016-03-04T20:50:00+00:00 
-    dominant_period:  16 
-    lat:  33.749 
-    lon:  -119.053 
-    mean_wave_direction:  272 
-    meta: { 
-      pressure: { 
-        tendency:  falling 
-     } 
-   } 
-    name:  Santa Monica Basin - 33NM WSW of Santa Monica, CA 
-    station:  46025 
-    units: {
-      air_temp:  F 
-      average_period:  sec 
-      dewpoint:  F 
-      dominant_period:  sec 
-      mean_wave_direction:  degT 
-      pressure:  in 
-      water_temp:  F 
-      wave_height:  ft 
-      wind_direction:  degT 
-      wind_gust:  kt 
-      wind_speed:  kt 
-   } 
-    url:  http://www.ndbc.noaa.gov/station_page.php?station=46025 
-    water_temp:  62.4 
-    wave_height:  5.9 
-    wind_direction:  100 
-    wind_gust:  5.8 
-    wind_speed:  1.9 
-}
+{"lon": -119.053, "mean_wave_direction": "272", "name": "Santa Monica Basin - 33NM WSW of Santa Monica, CA", "wave_height": 5.9, "units": {"wind_speed": "kt", "dewpoint": "F", "air_temp": "F", "wave_height": "ft", "wind_direction": "degT", "average_period": "sec", "water_temp": "F", "dominant_period": "sec", "wind_gust": "kt", "pressure": "in", "mean_wave_direction": "degT"}, "wind_speed": 1.9, "wind_direction": "100", "station": "46025", "air_temp": 60.4, "meta": {"pressure": {"tendency": "falling"}}, "average_period": 9.5, "lat": 33.749, "dominant_period": 16.0, "wind_gust": 5.8, "url": "http://www.ndbc.noaa.gov/station_page.php?station=46025", "datetime": "2016-03-04T20:50:00+00:00", "water_temp": 62.4}
 ```
 
 ## Developers
