@@ -61,6 +61,9 @@ class DistCommand(Command):
                 arcname=os.path.join(app, "static")
             )
 
+            spl.add(
+                "README.MD",
+                arcname=os.path.join(app, "README.MD"))
             spl.close()
 
         return
