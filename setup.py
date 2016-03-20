@@ -40,7 +40,7 @@ class DistCommand(Command):
         if not os.path.exists("build"):
             os.makedirs("build")
 
-        with closing(tarfile.open(os.path.join("build", app + ".spl"), "w")) as spl:
+        with closing(tarfile.open(os.path.join("build", app + ".spl"), "w:gz")) as spl:
 
             spl.add(
                 "src",
