@@ -25,10 +25,8 @@ def get_dict(item):
         data['station'] = title.split(" ")[1]
     data['guid'] = item.find('guid').text
     data['link'] = item.find('link').text
-    description_element = item.find('description')
-    soup = BeautifulSoup(description_element.text, 'html.parser')
-    description = soup.get_text()
-    lines = description.splitlines()
+    soup = BeautifulSoup(item.find('description').text, 'html.parser')
+    lines = soup.get_text().splitlines()
     data['time'] = lines[1]
     for i in range(2, len(lines)):
         name, value = lines[i].split(': ')
@@ -95,6 +93,8 @@ def get_dict(item):
             visibility = value.split(" ")
             data['visibility'] = float(visibility[0])
             data['visibility_unit'] = visibility[1]
+        else:
+            data[name] = value
     return data
     
 

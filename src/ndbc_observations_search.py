@@ -43,17 +43,17 @@ class ObservationsSearchScript(Script):
         try:
             float(lat)
         except:
-            raise ValueError("Latitude should be a number: "+lat)
+            raise ValueError("Latitude should be a number: " + lat)
         lon = validation_definition.parameters["longitude"]
         try:
             float(lon)
         except:
-            raise ValueError("Longitude should be a number: "+lat)
+            raise ValueError("Longitude should be a number: " + lat)
         radius = validation_definition.parameters["radius"]
         try:
             float(radius)
         except:
-            raise ValueError("Radius should be a number: "+radius)
+            raise ValueError("Radius should be a number: " + radius)
 
     def stream_events(self, inputs, ew):
         for input_name, input_item in inputs.inputs.iteritems():

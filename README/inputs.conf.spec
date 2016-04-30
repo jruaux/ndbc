@@ -13,4 +13,4 @@ radius = <value>
 [ndbc_activestations://<name>]
 *Fetches a list of active stations
 
-disabled = <value>
+dummy = <value>
