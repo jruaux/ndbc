@@ -36,6 +36,7 @@ class ActiveStationsScript(Script):
                     data[name] = value
                 event = Event()
                 event.stanza = input_name
+                event.sourceType = "ndbc:activestations"
                 event.data = json.dumps(data)
                 ew.write_event(event)
 
